@@ -1,0 +1,42 @@
+[
+  {
+    "login": "a8m",
+    "id": 7413593,
+    "node_id": "MDQ6VXNlcjc0MTM1OTM=",
+    "avatar_url": "https://avatars1.githubusercontent.com/u/7413593?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/a8m",
+    "html_url": "https://github.com/a8m",
+    "followers_url": "https://api.github.com/users/a8m/followers",
+    "following_url": "https://api.github.com/users/a8m/following{/other_user}",
+    "gists_url": "https://api.github.com/users/a8m/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/a8m/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/a8m/subscriptions",
+    "organizations_url": "https://api.github.com/users/a8m/orgs",
+    "repos_url": "https://api.github.com/users/a8m/repos",
+    "events_url": "https://api.github.com/users/a8m/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/a8m/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  {
+    "login": "aaronabramov",
+    "id": 940133,
+    "node_id": "MDQ6VXNlcjk0MDEzMw==",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/940133?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/aaronabramov",
+    "html_url": "https://github.com/aaronabramov",
+    "followers_url": "https://api.github.com/users/aaronabramov/followers",
+    "following_url": "https://api.github.com/users/aaronabramov/following{/other_user}",
+    "gists_url": "https://api.github.com/users/aaronabramov/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/aaronabramov/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/aaronabramov/subscriptions",
+    "organizations_url": "https://api.github.com/users/aaronabramov/orgs",
+    "repos_url": "https://api.github.com/users/aaronabramov/repos",
+    "events_url": "https://api.github.com/users/aaronabramov/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/aaronabramov/received_events",
+    "type": "User",
+    "site_admin": false
+  }
+]
