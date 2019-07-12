@@ -18,14 +18,13 @@ const Users = ({ users, isLoading, error }) => {
     return <Spinner />
   }
 
-  if (users.length === 0) {
-    return <EmptyBlock>There is no users :(</EmptyBlock>
-  }
-
   if (error) {
     return <EmptyBlock>Error: {error.message}</EmptyBlock>
   }
 
+  if (users.length === 0) {
+    return <EmptyBlock>There is no users :(</EmptyBlock>
+  }
   
   return (
     <List>
