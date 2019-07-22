@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 
-import { SearchContext } from '../../App';
+import { SearchContext, GITHUB_GET_ORG_MEMBERS_URL } from '../../App';
 
 const Input = styled.input`
   width: 145px;
@@ -29,7 +29,7 @@ const Search = () => {
   return (
     <form onSubmit={e => {
       e.preventDefault();
-      setSearch(value);
+      setSearch(GITHUB_GET_ORG_MEMBERS_URL(value));
       setValue('');
     }}>
       <Input placeholder="Search for organizations" value={value} onChange={e => setValue(e.target.value)} />

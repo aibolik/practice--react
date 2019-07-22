@@ -22,7 +22,7 @@ const Users = ({ users, isLoading, error }) => {
     return <EmptyBlock>Error: {error.message}</EmptyBlock>
   }
 
-  if (users.length === 0) {
+  if (!Boolean(users) || users.length === 0) {
     return <EmptyBlock>There is no users :(</EmptyBlock>
   }
   

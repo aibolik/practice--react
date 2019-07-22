@@ -5,7 +5,9 @@ import { createGlobalStyle } from 'styled-components';
 
 import UsersList from './components/UsersList';
 
-import useFetchMembers from './hooks/useFetchMembers';
+import useFetch from './hooks/useFetch';
+
+export const GITHUB_GET_ORG_MEMBERS_URL = org => `https://api.github.com/orgs/${org}/members`;
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap');
@@ -18,13 +20,13 @@ const GlobalStyles = createGlobalStyle`
 export const SearchContext = React.createContext();
 
 function App() {
-  const [{ users, isLoading, error }, setOrganization] = useFetchMembers('facebook');
+  const [{ data: users, isLoading, error }, setSearchUrl] = useFetch(GITHUB_GET_ORG_MEMBERS_URL('facebook'));
 
   return (
     <div>
       <Normalize />
       <GlobalStyles />
-      <SearchContext.Provider value={setOrganization}>
+      <SearchContext.Provider value={setSearchUrl}>
         <Header />
       </SearchContext.Provider>
       <UsersList users={users} isLoading={isLoading} error={error} />

@@ -1,8 +1,6 @@
 import { useReducer, useState, useEffect } from 'react';
 
-const GITHUB_GET_ORG_MEMBERS_URL = org => `https://api.github.com/orgs/${org}/members`;
-
-const membersFetchReducer = (state, action) => {
+const fetchReducer = (state, action) => {
   switch(action.type) {
     case 'FETCH_INIT':
       return {
@@ -15,7 +13,7 @@ const membersFetchReducer = (state, action) => {
         ...state,
         isLoading: false,
         error: null,
-        users: action.payload,
+        data: action.payload,
       };
     case 'FETCH_ERROR':
       return {
@@ -28,11 +26,11 @@ const membersFetchReducer = (state, action) => {
   }
 };
 
-export default function useFetchMembers(initialUrl) {
-  const [search, setSearch] = useState(initialUrl);
+export default function useFetch(initialUrl) {
+  const [url, setUrl] = useState(initialUrl);
 
-  const [state, dispatch] = useReducer(membersFetchReducer, {
-    users: [],
+  const [state, dispatch] = useReducer(fetchReducer, {
+    data: null,
     isLoading: false,
     error: null,
   });
@@ -42,9 +40,9 @@ export default function useFetchMembers(initialUrl) {
       dispatch({ type: 'FETCH_INIT' });
 
       try {
-        const response = await fetch(GITHUB_GET_ORG_MEMBERS_URL(search));
+        const response = await fetch(url);
         if (response.status < 200 || response.status >= 300) {
-          throw new Error('Organization not found');
+          throw new Error('Error fetching data');
         }
         const payload = await response.json();
 
@@ -55,7 +53,7 @@ export default function useFetchMembers(initialUrl) {
     }
 
     fetchUsers();
-  }, [search]);
+  }, [url]);
 
-  return [state, setSearch];
+  return [state, setUrl];
 }
