@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import App from './App';
 // import App from './projects/WeatherApp/App';
 // import App from './projects/KeyboardApp/App';
-import App from './projects/AudioNotesApp/App';
+// import App from './projects/AudioNotesApp/App';
+import App from './projects/AjaxTypeAheadApp/App';
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
