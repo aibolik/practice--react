@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 // import App from './projects/WeatherApp/App';
 // import App from './projects/KeyboardApp/App';
 // import App from './projects/AudioNotesApp/App';
-import App from './projects/AjaxTypeAheadApp/App';
+// import App from './projects/AjaxTypeAheadApp/App';
+import App from './projects/DebounceHook/App';
 
 import * as serviceWorker from './serviceWorker';
 
