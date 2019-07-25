@@ -6,6 +6,7 @@ import Logo from './assets/logo-hn-search.webp';
 import Suggestions from './components/Suggestions';
 
 import useFetch from '../../hooks/useFetch';
+import useDebounce from '../../hooks/useDebounce';
 
 const GlobalStyles = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,400&display=swap');
@@ -70,12 +71,12 @@ const HN_SEARCH_API = `http://hn.algolia.com/api/v1/search?query=`;
 
 function App() {
   const [search, setSearch] = useState('');
+  const debouncedSearch = useDebounce(search, 500);
   const [{ data, isLoading, error }, setSearchUrl] = useFetch(`${HN_SEARCH_API}${search}`);
 
   useEffect(() => {
-    console.log(`setting search to ${search}`);
-    setSearchUrl(`${HN_SEARCH_API}${search}`);
-  }, [search]);
+    setSearchUrl(`${HN_SEARCH_API}${debouncedSearch}`);
+  }, [debouncedSearch]);
 
   return (
     <div>

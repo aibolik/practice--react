@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
+
+import { SearchContext } from '../../App';
 
 const Wrapper = styled.div`
   padding: 3px 15px 10px;
@@ -28,6 +30,11 @@ const Anchor = styled.a`
 
   &:visited {
     color: #9c9c9c;
+  }
+
+  strong {
+    font-weight: bold;
+    background: #ff0;
   }
 `;
 
@@ -61,11 +68,16 @@ const Properties = styled.ul`
 `;
 
 const Item = ({ title, points, url, author, created_at: createdAt, num_comments: commentsCount, objectID }) => {
+  const search = useContext(SearchContext);
+
+  if (search) {
+    title = title.replace(new RegExp(search, 'ig'), `<strong>$&</strong>`);
+  }
 
   return (
     <Wrapper>
       <Heading>
-        <Anchor href={url} target="_blank">{title}</Anchor>
+        <Anchor href={url} target="_blank" dangerouslySetInnerHTML={{ __html: title }} />
       </Heading>
       <Properties>
         <li>
