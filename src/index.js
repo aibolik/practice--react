@@ -6,7 +6,8 @@ import ReactDOM from 'react-dom';
 // import App from './projects/AudioNotesApp/App';
 // import App from './projects/AjaxTypeAheadApp/App';
 // import App from './projects/DebounceHook/App';
-import App from './projects/AnimatedShadowApp/App';
+// import App from './projects/AnimatedShadowApp/App';
+import App from './projects/CatinderApp/App';
 
 import * as serviceWorker from './serviceWorker';
 
