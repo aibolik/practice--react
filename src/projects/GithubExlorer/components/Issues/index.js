@@ -1,15 +1,11 @@
 import React from 'react';
-import useFetch from '../../../../hooks/useFetch';
+import { useSuspenseFetch as useFetch } from '../../../../hooks/useFetch';
 
 import Wrapper from '../Wrapper';
 
 const Issues = ({ issues_url }) => {
   const url = issues_url.replace(/{([^}]+)}/g, '');
-  const [{ data: issues, isLoading, error }] = useFetch(url);
-
-  if (!issues || isLoading || error) {
-    return null;
-  }
+  const issues = useFetch(url);
 
   return (
     <Wrapper>

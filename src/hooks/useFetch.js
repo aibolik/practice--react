@@ -57,3 +57,22 @@ export default function useFetch(initialUrl) {
 
   return [state, setUrl];
 }
+
+const data = {};
+
+export function useSuspenseFetch(url) {
+  if (data[url]) {
+    console.log('cache hit');
+    return data[url];
+  }
+  console.log('cache miss, fetching', url);
+
+  const fetchCall = fetch(url)
+    .then(res => res.json())
+    .then((res) => {
+      data[url] = res;
+      return res;
+    });
+
+  throw fetchCall;
+}

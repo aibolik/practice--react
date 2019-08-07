@@ -3,11 +3,11 @@ import { Normalize } from 'styled-normalize';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Router } from '@reach/router';
 
-import Home from './components/Home';
-import Repos from './components/Repos';
-import Repo from './components/Repo';
-import Overview from './components/Overview';
-import Issues from './components/Issues';
+import Loading from './components/Loading';
+
+const Home = React.lazy(() => import('./components/Home'));
+const Repos = React.lazy(() => import('./components/Repos'));
+const Repo = React.lazy(() => import('./components/Repo'));
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
@@ -29,11 +29,13 @@ function App() {
       <Normalize />
       <GlobalStyles />
       <Wrapper>
-        <Router>
-          <Home path="/" />
-          <Repos path="repos" />
-          <Repo path="repos/:slug/*" />
-        </Router>
+        <React.Suspense fallback={<Loading />}>
+          <Router>
+            <Home path="/" />
+            <Repos path="repos" />
+            <Repo path="repos/:slug/*" />
+          </Router>
+        </React.Suspense>
       </Wrapper>
     </div>
   );
