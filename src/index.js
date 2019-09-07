@@ -8,7 +8,8 @@ import ReactDOM from 'react-dom';
 // import App from './projects/DebounceHook/App';
 // import App from './projects/AnimatedShadowApp/App';
 // import App from './projects/CatinderApp/App';
-import App from './projects/GithubExlorer/App';
+// import App from './projects/GithubExlorer/App';
+import App from './projects/ShoppingCartApp/App';
 
 import * as serviceWorker from './serviceWorker';
 
