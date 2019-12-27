@@ -37,6 +37,10 @@ export default function useFetch(initialUrl) {
 
   useEffect(() => {
     const fetchUsers = async () => {
+      // do nothing if initialUrl is falsy value
+      if (!url) {
+        return;
+      }
       dispatch({ type: 'FETCH_INIT' });
 
       try {

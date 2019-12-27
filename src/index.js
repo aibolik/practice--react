@@ -9,7 +9,8 @@ import ReactDOM from 'react-dom';
 // import App from './projects/AnimatedShadowApp/App';
 // import App from './projects/CatinderApp/App';
 // import App from './projects/GithubExlorer/App';
-import App from './projects/ToasterApp/App';
+// import App from './projects/ToasterApp/App';
+import App from './projects/GithubFileFinderApp/App';
 
 import * as serviceWorker from './serviceWorker';
 
