@@ -12,7 +12,8 @@ import ReactDOM from 'react-dom';
 // import App from './projects/ToasterApp/App';
 // import App from './projects/GithubFileFinderApp/App';
 // import App from './projects/KonamiApp/App';
-import App from './projects/DarkModeApp/App';
+// import App from './projects/DarkModeApp/App';
+import App from './projects/TabNavigationApp/App';
 
 import * as serviceWorker from './serviceWorker';
 
