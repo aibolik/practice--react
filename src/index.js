@@ -13,7 +13,8 @@ import ReactDOM from 'react-dom';
 // import App from './projects/GithubFileFinderApp/App';
 // import App from './projects/KonamiApp/App';
 // import App from './projects/DarkModeApp/App';
-import App from './projects/TabNavigationApp/App';
+// import App from './projects/TabNavigationApp/App';
+import App from './projects/EditorApp/App';
 
 import * as serviceWorker from './serviceWorker';
 
