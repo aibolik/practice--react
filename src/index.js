@@ -17,7 +17,8 @@ import ReactDOM from 'react-dom';
 // import App from './projects/EditorApp/App';
 // import App from './projects/ReusableComponentApp/App';
 // import App from './projects/PricingCalculatorApp/App';
-import App from './projects/CalculatorApp/App';
+// import App from './projects/CalculatorApp/App';
+import App from './projects/TimerApp/App';
 
 import * as serviceWorker from './serviceWorker';
 
